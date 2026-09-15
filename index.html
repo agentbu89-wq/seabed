@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SIA Seabed</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--tg-theme-bg-color, #0f172a);
+      color: var(--tg-theme-text-color, #f1f5f9);
+      min-height: 100vh;
+      padding: 20px 16px 40px;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      opacity: 0.75;
+      margin-bottom: 8px;
+    }
+
+    .card {
+      background: var(--tg-theme-secondary-bg-color, rgba(255, 255, 255, 0.06));
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .card-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      opacity: 0.6;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      gap: 12px;
+    }
+
+    .row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .label {
+      font-size: 14px;
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+
+    .value {
+      font-size: 14px;
+      font-weight: 500;
+      text-align: right;
+      word-break: break-word;
+    }
+
+    .address {
+      line-height: 1.4;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 13px;
+      opacity: 0.5;
+    }
+
+    .close-btn {
+      display: block;
+      width: 100%;
+      max-width: 280px;
+      margin: 28px auto 0;
+      padding: 14px;
+      background: var(--tg-theme-button-color, #2481cc);
+      color: var(--tg-theme-button-text-color, #ffffff);
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <img src="fish.jpg" alt="Seabed">
+      <h1>SIA Seabed</h1>
+      <div class="subtitle">Реквизиты компании</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Основные данные</div>
+
+      <div class="row">
+        <div class="label">Название</div>
+        <div class="value">SIA "Seabed"</div>
+      </div>
+
+      <div class="row">
+        <div class="label">Рег. номер</div>
+        <div class="value">40103261147</div>
+      </div>
+
+      <div class="row">
+        <div class="label">Дата регистрации</div>
+        <div class="value">27.11.2009</div>
+      </div>
+
+      <div class="row">
+        <div class="label">Уставный капитал</div>
+        <div class="value">24 200,00 EUR</div>
+      </div>
+
+      <div class="row">
+        <div class="label">SEPA</div>
+        <div class="value">LV05ZZZ40103261147</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Адрес</div>
+
+      <div class="row">
+        <div class="label">Юридический</div>
+        <div class="value address">
+          Rīga, Raunas iela 35 k-3 - 7<br>
+          LV-1084
+        </div>
+      </div>
+    </div>
+
+    <button class="close-btn" onclick="Telegram.WebApp.close()">
+      Закрыть
+    </button>
+
+    <div class="footer">
+      Данные из Lursoft · 2026
+    </div>
+  </div>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.ready();
+    tg.expand();
+    
+    // Можно добавить цвет хедера под тему
+    tg.setHeaderColor(tg.themeParams.bg_color || '#0f172a');
+  </script>
+</body>
+</html>
